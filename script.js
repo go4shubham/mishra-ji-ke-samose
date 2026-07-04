@@ -7,13 +7,17 @@ const io = new IntersectionObserver((entries) => {
       io.unobserve(e.target);
     }
   });
-}, { threshold: 0.15, rootMargin: '0px 0px -50px 0px' });
+}, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
 reveals.forEach(r => io.observe(r));
 
 // Timeline staggered reveal
-const timelineSteps = document.querySelectorAll('.timeline__step');
-timelineSteps.forEach((step, i) => {
-  step.style.transitionDelay = `${i * 0.15}s`;
+document.querySelectorAll('.timeline__step').forEach((step, i) => {
+  step.style.transitionDelay = `${i * 0.12}s`;
+});
+
+// Promise staggered reveal
+document.querySelectorAll('.promise__item').forEach((item, i) => {
+  item.style.transitionDelay = `${i * 0.08}s`;
 });
 
 // Nav shadow on scroll
@@ -23,6 +27,27 @@ window.addEventListener('scroll', () => {
     nav.style.boxShadow = '0 4px 20px rgba(61, 28, 0, 0.08)';
   } else {
     nav.style.boxShadow = 'none';
+  }
+});
+
+// Hamburger menu toggle
+function toggleMenu() {
+  const links = document.getElementById('navLinks');
+  const burger = document.querySelector('.nav__burger');
+  links.classList.toggle('open');
+  burger.classList.toggle('active');
+  burger.setAttribute('aria-label', links.classList.contains('open') ? 'Close menu' : 'Open menu');
+}
+function closeMenu() {
+  document.getElementById('navLinks').classList.remove('open');
+  document.querySelector('.nav__burger').classList.remove('active');
+}
+// Close menu on outside click
+document.addEventListener('click', (e) => {
+  const nav = document.querySelector('.nav');
+  const links = document.getElementById('navLinks');
+  if (links.classList.contains('open') && !nav.contains(e.target)) {
+    closeMenu();
   }
 });
 
@@ -38,12 +63,9 @@ function handleJoin(e) {
     return false;
   }
 
-  // In production this posts to Petpooja/Interakt CRM API.
-  // For now: local confirmation + WhatsApp deep link.
   const message = encodeURIComponent(`Hi Mishra Ji! I'm ${name} and I want on the list. My number is +91${phone}.`);
   const whatsappURL = `https://wa.me/919999999999?text=${message}`;
 
-  // Show inline success then redirect
   const btn = form.querySelector('.join__btn');
   const originalText = btn.textContent;
   btn.textContent = 'Opening WhatsApp...';
