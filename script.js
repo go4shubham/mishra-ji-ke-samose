@@ -20,15 +20,20 @@ document.querySelectorAll('.promise__item').forEach((item, i) => {
   item.style.transitionDelay = `${i * 0.08}s`;
 });
 
-// Nav shadow on scroll
+// Nav shadow + scroll-to-top button visibility
 const nav = document.querySelector('.nav');
+const toTopBtn = document.querySelector('.to-top');
 window.addEventListener('scroll', () => {
-  if (window.scrollY > 40) {
-    nav.style.boxShadow = '0 4px 20px rgba(61, 28, 0, 0.08)';
-  } else {
-    nav.style.boxShadow = 'none';
+  const y = window.scrollY;
+  nav.style.boxShadow = y > 40 ? '0 4px 20px rgba(61, 28, 0, 0.08)' : 'none';
+  if (toTopBtn) {
+    toTopBtn.classList.toggle('visible', y > 400);
   }
 });
+
+function scrollToTop() {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
 
 // Hamburger menu toggle
 function toggleMenu() {
