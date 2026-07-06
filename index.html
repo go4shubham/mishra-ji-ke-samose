@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Rozha+One&family=Karla:wght@400;500;700&family=Noto+Sans+Devanagari:wght@400;600&family=Caveat:wght@400;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css?v=9" />
+  <link rel="stylesheet" href="style.css?v=10" />
   <link rel="icon" type="image/png" href="assets/logo-main.png" />
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
   <meta http-equiv="Pragma" content="no-cache" />
@@ -60,33 +60,47 @@
 
     <div class="timeline">
       <svg class="timeline__path" viewBox="0 0 1000 200" preserveAspectRatio="none" aria-hidden="true">
-        <path d="M 30 100 Q 140 30, 260 100 T 500 100 T 740 100 T 970 100"
+        <path d="M 60 100 Q 170 30, 290 100 T 520 100 T 750 100 T 960 100"
               fill="none" stroke="currentColor" stroke-width="3"
-              stroke-dasharray="2 12" stroke-linecap="round" />
-        <!-- Walking samosa footprints between each image -->
-        <g class="timeline__footprint" transform="translate(190, 55)">
-          <path d="M 0 0 L 7 -9 L 14 0 Z" fill="#E8933C" stroke="#8B3A1E" stroke-width="1" stroke-linejoin="round" />
-          <path d="M 2 -2 Q 7 -4 12 -2" fill="none" stroke="#4A7C10" stroke-width="1.2" stroke-linecap="round" />
+              stroke-dasharray="3 14" stroke-linecap="round" />
+        <!-- Walking samosa footprints between each image (larger, clearer) -->
+        <g class="timeline__footprint" transform="translate(200, 42)">
+          <path d="M 0 0 L 16 -22 L 32 0 Z" fill="#E8933C" stroke="#8B3A1E" stroke-width="1.5" stroke-linejoin="round" />
+          <path d="M 3 -3 Q 16 -9 29 -3" fill="none" stroke="#4A7C10" stroke-width="2.2" stroke-linecap="round" />
+          <path d="M 8 -6 Q 16 -3 24 -6" fill="none" stroke="#2b1500" stroke-width="1.2" stroke-linecap="round" />
         </g>
-        <g class="timeline__footprint" transform="translate(400, 140)">
-          <path d="M 0 0 L 7 -9 L 14 0 Z" fill="#E8933C" stroke="#8B3A1E" stroke-width="1" stroke-linejoin="round" />
-          <path d="M 2 -2 Q 7 -4 12 -2" fill="none" stroke="#4A7C10" stroke-width="1.2" stroke-linecap="round" />
+        <g class="timeline__footprint" transform="translate(410, 130)">
+          <path d="M 0 0 L 16 -22 L 32 0 Z" fill="#E8933C" stroke="#8B3A1E" stroke-width="1.5" stroke-linejoin="round" />
+          <path d="M 3 -3 Q 16 -9 29 -3" fill="none" stroke="#4A7C10" stroke-width="2.2" stroke-linecap="round" />
+          <path d="M 8 -6 Q 16 -3 24 -6" fill="none" stroke="#2b1500" stroke-width="1.2" stroke-linecap="round" />
         </g>
-        <g class="timeline__footprint" transform="translate(620, 55)">
-          <path d="M 0 0 L 7 -9 L 14 0 Z" fill="#E8933C" stroke="#8B3A1E" stroke-width="1" stroke-linejoin="round" />
-          <path d="M 2 -2 Q 7 -4 12 -2" fill="none" stroke="#4A7C10" stroke-width="1.2" stroke-linecap="round" />
+        <g class="timeline__footprint" transform="translate(630, 42)">
+          <path d="M 0 0 L 16 -22 L 32 0 Z" fill="#E8933C" stroke="#8B3A1E" stroke-width="1.5" stroke-linejoin="round" />
+          <path d="M 3 -3 Q 16 -9 29 -3" fill="none" stroke="#4A7C10" stroke-width="2.2" stroke-linecap="round" />
+          <path d="M 8 -6 Q 16 -3 24 -6" fill="none" stroke="#2b1500" stroke-width="1.2" stroke-linecap="round" />
         </g>
-        <g class="timeline__footprint" transform="translate(840, 140)">
-          <path d="M 0 0 L 7 -9 L 14 0 Z" fill="#E8933C" stroke="#8B3A1E" stroke-width="1" stroke-linejoin="round" />
-          <path d="M 2 -2 Q 7 -4 12 -2" fill="none" stroke="#4A7C10" stroke-width="1.2" stroke-linecap="round" />
+        <g class="timeline__footprint" transform="translate(850, 130)">
+          <path d="M 0 0 L 16 -22 L 32 0 Z" fill="#E8933C" stroke="#8B3A1E" stroke-width="1.5" stroke-linejoin="round" />
+          <path d="M 3 -3 Q 16 -9 29 -3" fill="none" stroke="#4A7C10" stroke-width="2.2" stroke-linecap="round" />
+          <path d="M 8 -6 Q 16 -3 24 -6" fill="none" stroke="#2b1500" stroke-width="1.2" stroke-linecap="round" />
         </g>
-        <!-- The lead walker samosa at the start of the journey -->
-        <g class="timeline__walker" transform="translate(20, 92)">
-          <path d="M 0 0 L 18 -22 L 36 0 Z" fill="#E8933C" stroke="#8B3A1E" stroke-width="1.5" stroke-linejoin="round" />
-          <path d="M 4 -4 Q 18 -10 32 -4" fill="none" stroke="#4A7C10" stroke-width="3" stroke-linecap="round" />
-          <circle cx="12" cy="-10" r="1.6" fill="#2b1500" />
-          <circle cx="24" cy="-10" r="1.6" fill="#2b1500" />
-          <path d="M 10 -6 Q 18 -3 26 -6" fill="none" stroke="#2b1500" stroke-width="1.4" stroke-linecap="round" />
+        <!-- The lead walker samosa mascot at the start of the journey (bigger, mustachioed) -->
+        <g class="timeline__walker" transform="translate(10, 100)">
+          <!-- Body -->
+          <path d="M 0 0 L 30 -44 L 60 0 Z" fill="#E8933C" stroke="#8B3A1E" stroke-width="2.5" stroke-linejoin="round" />
+          <!-- Chutney drizzle -->
+          <path d="M 8 -8 Q 30 -16 52 -8" fill="none" stroke="#4A7C10" stroke-width="4.5" stroke-linecap="round" />
+          <!-- Mustache -->
+          <path d="M 16 -14 Q 22 -18 30 -15 Q 38 -18 44 -14" fill="#2b1500" stroke="#2b1500" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+          <!-- Eyes -->
+          <circle cx="21" cy="-22" r="2.5" fill="#2b1500" />
+          <circle cx="39" cy="-22" r="2.5" fill="#2b1500" />
+          <!-- Eye highlights -->
+          <circle cx="22" cy="-23" r="0.8" fill="#fff" />
+          <circle cx="40" cy="-23" r="0.8" fill="#fff" />
+          <!-- Little walking legs -->
+          <path d="M 18 0 L 15 6" stroke="#8B3A1E" stroke-width="2.5" stroke-linecap="round" />
+          <path d="M 42 0 L 45 6" stroke="#8B3A1E" stroke-width="2.5" stroke-linecap="round" />
         </g>
       </svg>
       <div class="timeline__step timeline__step--up reveal">
