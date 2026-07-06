@@ -2,3 +2,6 @@
 Thumbs.db
 node_modules/
 *.log
+
+# Local backup snapshots — not needed on live site
+assets/*-BACKUP.png

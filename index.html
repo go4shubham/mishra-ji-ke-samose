@@ -2,14 +2,14 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <meta name="description" content="Mishra Ji Ke Samose. Famous chole samosa from UP's gullies, now in Mumbai." />
   <meta name="theme-color" content="#5D2A00" />
   <title>Mishra Ji Ke Samose · स्वाद UP की गलियों का</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Rozha+One&family=Karla:wght@400;500;700&family=Noto+Sans+Devanagari:wght@400;600&family=Caveat:wght@400;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css?v=4" />
+  <link rel="stylesheet" href="style.css?v=9" />
   <link rel="icon" type="image/png" href="assets/logo-main.png" />
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
   <meta http-equiv="Pragma" content="no-cache" />
@@ -59,30 +59,75 @@
     </div>
 
     <div class="timeline">
-      <div class="timeline__step reveal">
-        <img src="assets/02-timeline-persia.png" alt="" loading="lazy" />
-        <p class="timeline__era">13th century<br/>Central Asia</p>
-        <p class="timeline__text">A stuffed pastry called <em>sambusa</em> travels the Silk Road on horseback. Poet Amir Khusrau writes about it before it crosses the Indus.</p>
+      <svg class="timeline__path" viewBox="0 0 1000 200" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M 30 100 Q 140 30, 260 100 T 500 100 T 740 100 T 970 100"
+              fill="none" stroke="currentColor" stroke-width="3"
+              stroke-dasharray="2 12" stroke-linecap="round" />
+        <!-- Walking samosa footprints between each image -->
+        <g class="timeline__footprint" transform="translate(190, 55)">
+          <path d="M 0 0 L 7 -9 L 14 0 Z" fill="#E8933C" stroke="#8B3A1E" stroke-width="1" stroke-linejoin="round" />
+          <path d="M 2 -2 Q 7 -4 12 -2" fill="none" stroke="#4A7C10" stroke-width="1.2" stroke-linecap="round" />
+        </g>
+        <g class="timeline__footprint" transform="translate(400, 140)">
+          <path d="M 0 0 L 7 -9 L 14 0 Z" fill="#E8933C" stroke="#8B3A1E" stroke-width="1" stroke-linejoin="round" />
+          <path d="M 2 -2 Q 7 -4 12 -2" fill="none" stroke="#4A7C10" stroke-width="1.2" stroke-linecap="round" />
+        </g>
+        <g class="timeline__footprint" transform="translate(620, 55)">
+          <path d="M 0 0 L 7 -9 L 14 0 Z" fill="#E8933C" stroke="#8B3A1E" stroke-width="1" stroke-linejoin="round" />
+          <path d="M 2 -2 Q 7 -4 12 -2" fill="none" stroke="#4A7C10" stroke-width="1.2" stroke-linecap="round" />
+        </g>
+        <g class="timeline__footprint" transform="translate(840, 140)">
+          <path d="M 0 0 L 7 -9 L 14 0 Z" fill="#E8933C" stroke="#8B3A1E" stroke-width="1" stroke-linejoin="round" />
+          <path d="M 2 -2 Q 7 -4 12 -2" fill="none" stroke="#4A7C10" stroke-width="1.2" stroke-linecap="round" />
+        </g>
+        <!-- The lead walker samosa at the start of the journey -->
+        <g class="timeline__walker" transform="translate(20, 92)">
+          <path d="M 0 0 L 18 -22 L 36 0 Z" fill="#E8933C" stroke="#8B3A1E" stroke-width="1.5" stroke-linejoin="round" />
+          <path d="M 4 -4 Q 18 -10 32 -4" fill="none" stroke="#4A7C10" stroke-width="3" stroke-linecap="round" />
+          <circle cx="12" cy="-10" r="1.6" fill="#2b1500" />
+          <circle cx="24" cy="-10" r="1.6" fill="#2b1500" />
+          <path d="M 10 -6 Q 18 -3 26 -6" fill="none" stroke="#2b1500" stroke-width="1.4" stroke-linecap="round" />
+        </g>
+      </svg>
+      <div class="timeline__step timeline__step--up reveal">
+        <div class="timeline__pic">
+          <img src="assets/02-timeline-persia.png" alt="" loading="lazy" />
+          <span class="timeline__badge">1</span>
+        </div>
+        <p class="timeline__era">It began on the Silk Road<br/><span class="timeline__when">13th century · Persia</span></p>
+        <p class="timeline__text">A stuffed pastry called <em>sambusa</em> rides the Silk Road on horseback. Poet Amir Khusrau writes about it in Persian verse before it crosses the Indus into Sindh.</p>
       </div>
-      <div class="timeline__step reveal">
-        <img src="assets/03-timeline-khilji.png" alt="" loading="lazy" />
-        <p class="timeline__era">14th century<br/>Delhi Sultanate</p>
-        <p class="timeline__text">Ibn Battuta tastes one in 1340 at the Sultan's court. He writes home about it.</p>
+      <div class="timeline__step timeline__step--down reveal">
+        <div class="timeline__pic">
+          <img src="assets/03-timeline-khilji.png" alt="" loading="lazy" />
+          <span class="timeline__badge">2</span>
+        </div>
+        <p class="timeline__era">The Sultan's table in Delhi<br/><span class="timeline__when">1340 · Muhammad bin Tughlaq's court</span></p>
+        <p class="timeline__text">A Moroccan traveller, Ibn Battuta, tastes small stuffed pastries at the Sultan's table. He writes home about them. Three continents now know the samosa.</p>
       </div>
-      <div class="timeline__step reveal">
-        <img src="assets/04-timeline-halwai-up.png" alt="" loading="lazy" />
-        <p class="timeline__era">17–19th century<br/>The Ganga plains</p>
-        <p class="timeline__text">Halwais on the Ganga plains take it and pack potato inside, layer in kalonji and hing, fry it in mustard oil. By dawn, every gully smells the same. Hot ghee, warm masala, morning chai.</p>
+      <div class="timeline__step timeline__step--up reveal">
+        <div class="timeline__pic">
+          <img src="assets/04-timeline-halwai-up.png" alt="" loading="lazy" />
+          <span class="timeline__badge">3</span>
+        </div>
+        <p class="timeline__era">The halwais made it Indian<br/><span class="timeline__when">17th–19th century · the Ganga plains</span></p>
+        <p class="timeline__text">Halwais pack potato inside, layer in kalonji and hing, fry it in mustard oil. By dawn, every UP gully smells the same — hot ghee, warm masala, morning chai.</p>
       </div>
-      <div class="timeline__step reveal">
-        <img src="assets/05-timeline-allahabad-gully.png" alt="" loading="lazy" />
-        <p class="timeline__era">Post-1947<br/>UP welcomes Punjab</p>
-        <p class="timeline__text">Partition brings millions of Punjabi refugees east. Chole arrives with them. One winter morning, a halwai cracks a samosa open and pours hot chole over it. The chole samosa is born.</p>
+      <div class="timeline__step timeline__step--down reveal">
+        <div class="timeline__pic">
+          <img src="assets/05-timeline-allahabad-gully.png" alt="" loading="lazy" />
+          <span class="timeline__badge">4</span>
+        </div>
+        <p class="timeline__era">Punjab meets Prayagraj<br/><span class="timeline__when">1947 · after Partition</span></p>
+        <p class="timeline__text">Punjabi refugees pour east into UP, bringing chole with them. One winter morning, a halwai cracks a samosa open and pours hot chole over it. The chole samosa is born.</p>
       </div>
-      <div class="timeline__step reveal">
-        <img src="assets/06-timeline-mumbai-arrival.png" alt="" loading="lazy" />
-        <p class="timeline__era">2026<br/>Mumbai</p>
-        <p class="timeline__text">Mishra Ji lands in Mumbai. Same brass kadhai. Same masala his family has ground for three generations. Same one rule. Samosa hits the oil only when you order.</p>
+      <div class="timeline__step timeline__step--up reveal">
+        <div class="timeline__pic">
+          <img src="assets/06-timeline-mumbai-arrival.png" alt="" loading="lazy" />
+          <span class="timeline__badge">5</span>
+        </div>
+        <p class="timeline__era">Mishra Ji lands in Mumbai<br/><span class="timeline__when">2026 · Kharghar</span></p>
+        <p class="timeline__text">Same brass kadhai his father used. Same masala the family has ground for three generations. Same one rule — samosa hits the oil only when you order.</p>
       </div>
     </div>
 
@@ -140,9 +185,9 @@
       <p class="ritual-callout__hindi">सुबह की तिकड़ी</p>
       <h2 class="ritual-callout__title">The morning trinity.</h2>
       <div class="ritual-callout__trinity">
-        <span>Samosa.</span>
+        <span>Chole samosa.</span>
         <span class="ritual-callout__dot">·</span>
-        <span>Chole.</span>
+        <span>Gulab jamun.</span>
         <span class="ritual-callout__dot">·</span>
         <span>Kulhad chai.</span>
       </div>
@@ -399,6 +444,6 @@
 
   <button class="to-top" aria-label="Back to top" onclick="scrollToTop()">↑</button>
 
-  <script src="script.js?v=5"></script>
+  <script src="script.js?v=7"></script>
 </body>
 </html>
