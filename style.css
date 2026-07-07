@@ -169,38 +169,28 @@ a { color: inherit; text-decoration: none; }
   transform: scale(1.03);
   animation: slowZoom 14s ease-in-out infinite alternate;
   will-change: transform;
-  /* Keep the illustration crisp — only the last 12% fades so the kadai + chole stay visible */
+  /* Long smooth taper — the image dissolves slowly into the hero's cream bg,
+     no hard edge or visible line where the fade ends */
   -webkit-mask-image: linear-gradient(
     to bottom,
     black 0%,
-    black 88%,
-    rgba(0, 0, 0, 0.72) 93%,
-    rgba(0, 0, 0, 0.35) 97%,
+    black 72%,
+    rgba(0, 0, 0, 0.88) 80%,
+    rgba(0, 0, 0, 0.68) 86%,
+    rgba(0, 0, 0, 0.42) 92%,
+    rgba(0, 0, 0, 0.18) 97%,
     transparent 100%
   );
   mask-image: linear-gradient(
     to bottom,
     black 0%,
-    black 88%,
-    rgba(0, 0, 0, 0.72) 93%,
-    rgba(0, 0, 0, 0.35) 97%,
+    black 72%,
+    rgba(0, 0, 0, 0.88) 80%,
+    rgba(0, 0, 0, 0.68) 86%,
+    rgba(0, 0, 0, 0.42) 92%,
+    rgba(0, 0, 0, 0.18) 97%,
     transparent 100%
   );
-}
-/* Cream veil hugs only the very bottom so the fade meets the next section without a visible line */
-.hero::after {
-  content: '';
-  position: absolute;
-  left: 0; right: 0; bottom: -1px;
-  height: 14%;
-  background: linear-gradient(
-    to bottom,
-    rgba(245, 229, 200, 0) 0%,
-    rgba(245, 229, 200, 0.55) 55%,
-    var(--cream) 100%
-  );
-  pointer-events: none;
-  z-index: 1;
 }
 @keyframes slowZoom {
   from { transform: scale(1.03); }
@@ -308,21 +298,25 @@ a { color: inherit; text-decoration: none; }
     background-size: cover;
     transform: scale(1.02);
     animation: slowZoom 12s ease-in-out infinite alternate;
-    /* Mobile: minimal bottom fade only — keep kadai + Papa fully visible */
+    /* Mobile: same long smooth taper as desktop */
     -webkit-mask-image: linear-gradient(
       to bottom,
       black 0%,
-      black 88%,
-      rgba(0, 0, 0, 0.72) 93%,
-      rgba(0, 0, 0, 0.35) 97%,
+      black 72%,
+      rgba(0, 0, 0, 0.88) 80%,
+      rgba(0, 0, 0, 0.68) 86%,
+      rgba(0, 0, 0, 0.42) 92%,
+      rgba(0, 0, 0, 0.18) 97%,
       transparent 100%
     );
     mask-image: linear-gradient(
       to bottom,
       black 0%,
-      black 88%,
-      rgba(0, 0, 0, 0.72) 93%,
-      rgba(0, 0, 0, 0.35) 97%,
+      black 72%,
+      rgba(0, 0, 0, 0.88) 80%,
+      rgba(0, 0, 0, 0.68) 86%,
+      rgba(0, 0, 0, 0.42) 92%,
+      rgba(0, 0, 0, 0.18) 97%,
       transparent 100%
     );
   }
