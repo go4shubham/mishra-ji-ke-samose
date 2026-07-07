@@ -228,15 +228,15 @@ a { color: inherit; text-decoration: none; }
   from { transform: scale(1.03); }
   to { transform: scale(1.12); }
 }
-/* Desktop overlay: cream veil on left (helps brown text read on top of illustration), clear right */
+/* Desktop overlay: dark left, clear right */
 .hero__overlay {
   position: absolute; inset: 0;
   background: linear-gradient(
     to right,
-    rgba(245, 229, 200, 0.82) 0%,
-    rgba(245, 229, 200, 0.60) 30%,
-    rgba(245, 229, 200, 0.25) 55%,
-    rgba(245, 229, 200, 0.06) 80%,
+    rgba(61, 28, 0, 0.88) 0%,
+    rgba(61, 28, 0, 0.68) 30%,
+    rgba(61, 28, 0, 0.32) 55%,
+    rgba(61, 28, 0, 0.05) 80%,
     transparent 100%
   );
 }
@@ -244,7 +244,7 @@ a { color: inherit; text-decoration: none; }
   position: relative; z-index: 2;
   text-align: left;
   padding: 5rem 0 4rem max(var(--gutter), 5vw);
-  color: var(--brown-dark);
+  color: var(--cream);
   max-width: 620px;
   margin: 0;
   width: 55%;
@@ -253,17 +253,17 @@ a { color: inherit; text-decoration: none; }
   font-family: var(--f-display);
   font-size: clamp(2.4rem, 5.5vw, 4.4rem);
   line-height: 1.03;
-  color: var(--brown-dark);
+  color: var(--cream);
   font-weight: 400;
   letter-spacing: -0.01em;
-  text-shadow: 0 2px 12px rgba(245, 229, 200, 0.65);
+  text-shadow: 0 3px 24px rgba(0, 0, 0, 0.5);
   opacity: 0;
   animation: fadeUp 0.75s 0.2s forwards;
 }
 .hero__sub {
   font-family: var(--f-hand);
   font-size: clamp(1.6rem, 2.6vw, 2.2rem);
-  color: var(--red);
+  color: var(--orange-light);
   margin-top: 0.8rem;
   line-height: 1.1;
   opacity: 0;
@@ -273,8 +273,8 @@ a { color: inherit; text-decoration: none; }
   display: inline-block;
   margin: 1.6rem 0 2rem;
   padding: 0.7rem 1.1rem 0.7rem 1.2rem;
-  border-left: 3px solid var(--red);
-  background: rgba(245, 229, 200, 0.5);
+  border-left: 3px solid var(--orange-light);
+  background: rgba(0, 0, 0, 0.25);
   backdrop-filter: blur(6px);
   border-radius: 0 4px 4px 0;
   opacity: 0;
@@ -283,7 +283,7 @@ a { color: inherit; text-decoration: none; }
 .hero__hindi {
   font-family: var(--f-hindi);
   font-size: clamp(1.05rem, 1.9vw, 1.35rem);
-  color: var(--brown-dark);
+  color: var(--orange-light);
   letter-spacing: 0.01em;
   display: block;
   font-weight: 600;
@@ -291,8 +291,8 @@ a { color: inherit; text-decoration: none; }
 .hero__cta {
   display: inline-flex; align-items: center; gap: 0.7rem;
   padding: 1rem 2.2rem;
-  background: var(--red);
-  border: 2px solid var(--red);
+  background: rgba(163, 32, 32, 0.25);
+  border: 2px solid var(--cream);
   color: var(--cream);
   border-radius: 999px;
   font-family: var(--f-body);
@@ -301,6 +301,7 @@ a { color: inherit; text-decoration: none; }
   transition: all 0.3s;
   min-height: 52px;
   font-size: 1rem;
+  backdrop-filter: blur(6px);
   opacity: 0;
   animation: fadeUp 0.75s 0.8s forwards;
 }
@@ -375,18 +376,18 @@ a { color: inherit; text-decoration: none; }
     backdrop-filter: none;
     margin: 0;
   }
-  /* Title: forced 2 lines via <br/>. Font sized so both lines stay on one physical row each.
-     "North India wakes up to." (24 chars) is the longer of the two — it's the width limiter. */
+  /* Title: ONE physical line on mobile, sized bigger than the sub text.
+     41 chars must fit in ~335px content width — 4.5vw = ~17px @ 375px, ~19px @ 428px */
   .hero__title {
     margin: 0;
-    font-size: clamp(1.15rem, 4.6vw, 1.5rem);
-    line-height: 1.18;
-    letter-spacing: -0.015em;
+    font-size: clamp(1rem, 4.5vw, 1.35rem);
+    line-height: 1.15;
+    letter-spacing: -0.02em;
     color: var(--brown-dark) !important;
     text-shadow: none !important;
     opacity: 1 !important;
     animation: none !important;
-    white-space: normal;
+    white-space: nowrap;
     overflow: visible;
   }
   /* Sub + Hindi tagline on one row (nowrap so they don't stack) */
@@ -399,19 +400,26 @@ a { color: inherit; text-decoration: none; }
   }
   .hero__sub {
     margin: 0;
-    font-size: 1rem;
+    font-size: 0.85rem;
     line-height: 1.2;
     flex-shrink: 0;
   }
+  /* Hindi tagline pill: highlighted — solid warm bg + strong border, catches the eye */
   .hero__tagline {
     margin: 0;
-    padding: 0.35rem 0.7rem;
+    padding: 0.4rem 0.8rem;
     flex-shrink: 1;
     min-width: 0;
+    background: rgba(163, 32, 32, 0.14) !important;
+    border-left: 3px solid var(--red) !important;
+    border-radius: 4px !important;
+    box-shadow: 0 2px 8px rgba(93, 42, 0, 0.08);
   }
   .hero__hindi {
-    font-size: 1rem !important;
+    font-size: 0.9rem !important;
     white-space: nowrap;
+    color: var(--brown-dark) !important;
+    font-weight: 700 !important;
   }
   /* Button smaller, secondary — gives title the visual weight */
   .hero__cta {
@@ -427,14 +435,7 @@ a { color: inherit; text-decoration: none; }
     backdrop-filter: none;
   }
   .hero__cta:hover { background: var(--red-dark); border-color: var(--red-dark); }
-  /* Style the Hindi tagline pill on mobile so it reads well below the sub */
-  .hero__tagline {
-    background: rgba(163, 32, 32, 0.08);
-    border-left: 3px solid var(--red);
-    border-radius: 4px;
-  }
-  .hero__hindi { color: var(--brown-dark); font-weight: 700; }
-  .hero__sub { color: var(--red); }
+  .hero__sub { color: var(--red) !important; }
 }
 /* Small mobile: hide SCROLL cue so it doesn't collide with CTA */
 @media (max-width: 500px) {
