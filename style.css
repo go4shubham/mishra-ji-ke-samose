@@ -400,42 +400,46 @@ a { color: inherit; text-decoration: none; }
   }
   .hero__sub {
     margin: 0;
-    font-size: 0.75rem;
+    font-size: 0.9rem;
     line-height: 1.2;
     flex-shrink: 0;
+    color: var(--orange-light) !important;
   }
-  /* Hindi tagline pill: highlighted — warm bg, red border bar, bold Devanagari — pops next to sub */
+  /* Hindi tagline pill: highlighted — dark bg + orange border + orange text, matches desktop */
   .hero__tagline {
     margin: 0;
-    padding: 0.35rem 0.7rem;
+    padding: 0.4rem 0.85rem;
     flex-shrink: 1;
     min-width: 0;
-    background: rgba(163, 32, 32, 0.14) !important;
-    border-left: 3px solid var(--red) !important;
-    border-radius: 4px !important;
-    box-shadow: 0 2px 8px rgba(93, 42, 0, 0.08);
+    background: rgba(61, 28, 0, 0.85) !important;
+    border-left: 3px solid var(--orange-light) !important;
+    border-radius: 0 4px 4px 0 !important;
+    box-shadow: 0 2px 10px rgba(93, 42, 0, 0.18);
   }
   .hero__hindi {
-    font-size: 0.8rem !important;
+    font-size: 0.9rem !important;
     white-space: nowrap;
-    color: var(--brown-dark) !important;
+    color: var(--orange-light) !important;
     font-weight: 700 !important;
   }
-  /* Button smaller, secondary — gives title the visual weight */
+  /* CTA: full-width bar so we USE the horizontal space on mobile */
   .hero__cta {
-    display: inline-flex;
-    margin-top: 0.85rem;
-    padding: 0.6rem 1.15rem;
-    font-size: 0.85rem;
-    min-height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+    padding: 0.85rem 1.15rem;
+    font-size: 0.95rem;
+    min-height: 48px;
     white-space: nowrap;
     background: var(--red);
     color: var(--cream);
     border-color: var(--red);
     backdrop-filter: none;
+    width: 100%;
+    box-sizing: border-box;
   }
   .hero__cta:hover { background: var(--red-dark); border-color: var(--red-dark); }
-  .hero__sub { color: var(--red) !important; }
 }
 /* Small mobile: hide SCROLL cue so it doesn't collide with CTA */
 @media (max-width: 500px) {
