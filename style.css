@@ -169,38 +169,34 @@ a { color: inherit; text-decoration: none; }
   transform: scale(1.03);
   animation: slowZoom 14s ease-in-out infinite alternate;
   will-change: transform;
+  /* Keep the illustration crisp — only the last 12% fades so the kadai + chole stay visible */
   -webkit-mask-image: linear-gradient(
     to bottom,
     black 0%,
-    black 62%,
-    rgba(0, 0, 0, 0.88) 74%,
-    rgba(0, 0, 0, 0.62) 84%,
-    rgba(0, 0, 0, 0.32) 92%,
-    rgba(0, 0, 0, 0.10) 97%,
+    black 88%,
+    rgba(0, 0, 0, 0.72) 93%,
+    rgba(0, 0, 0, 0.35) 97%,
     transparent 100%
   );
   mask-image: linear-gradient(
     to bottom,
     black 0%,
-    black 62%,
-    rgba(0, 0, 0, 0.88) 74%,
-    rgba(0, 0, 0, 0.62) 84%,
-    rgba(0, 0, 0, 0.32) 92%,
-    rgba(0, 0, 0, 0.10) 97%,
+    black 88%,
+    rgba(0, 0, 0, 0.72) 93%,
+    rgba(0, 0, 0, 0.35) 97%,
     transparent 100%
   );
 }
-/* Bottom cream veil: extra safety so any lingering image pixels blend into the next section */
+/* Cream veil hugs only the very bottom so the fade meets the next section without a visible line */
 .hero::after {
   content: '';
   position: absolute;
-  left: 0; right: 0; bottom: 0;
-  height: 34%;
+  left: 0; right: 0; bottom: -1px;
+  height: 14%;
   background: linear-gradient(
     to bottom,
     rgba(245, 229, 200, 0) 0%,
-    rgba(245, 229, 200, 0.35) 45%,
-    rgba(245, 229, 200, 0.75) 75%,
+    rgba(245, 229, 200, 0.55) 55%,
     var(--cream) 100%
   );
   pointer-events: none;
@@ -312,24 +308,21 @@ a { color: inherit; text-decoration: none; }
     background-size: cover;
     transform: scale(1.02);
     animation: slowZoom 12s ease-in-out infinite alternate;
+    /* Mobile: minimal bottom fade only — keep kadai + Papa fully visible */
     -webkit-mask-image: linear-gradient(
       to bottom,
       black 0%,
-      black 68%,
-      rgba(0, 0, 0, 0.85) 78%,
-      rgba(0, 0, 0, 0.62) 86%,
-      rgba(0, 0, 0, 0.38) 92%,
-      rgba(0, 0, 0, 0.15) 97%,
+      black 88%,
+      rgba(0, 0, 0, 0.72) 93%,
+      rgba(0, 0, 0, 0.35) 97%,
       transparent 100%
     );
     mask-image: linear-gradient(
       to bottom,
       black 0%,
-      black 68%,
-      rgba(0, 0, 0, 0.85) 78%,
-      rgba(0, 0, 0, 0.62) 86%,
-      rgba(0, 0, 0, 0.38) 92%,
-      rgba(0, 0, 0, 0.15) 97%,
+      black 88%,
+      rgba(0, 0, 0, 0.72) 93%,
+      rgba(0, 0, 0, 0.35) 97%,
       transparent 100%
     );
   }
@@ -808,20 +801,14 @@ a { color: inherit; text-decoration: none; }
 .mishra__header .section__kicker {
   margin-bottom: 0.4rem;
 }
-.mishra__name {
-  font-family: var(--f-display);
-  font-size: clamp(2.6rem, 6vw, 4.4rem);
-  color: var(--brown-dark);
-  line-height: 1;
-  margin: 0;
-  letter-spacing: -0.5px;
-}
 .mishra__name-hindi {
   font-family: var(--f-hindi);
-  font-size: clamp(1.6rem, 3.5vw, 2.4rem);
-  color: var(--red);
-  margin-top: 0.4rem;
-  line-height: 1.1;
+  font-size: clamp(2.8rem, 6.4vw, 4.6rem);
+  color: var(--brown-dark);
+  line-height: 1.05;
+  margin: 0;
+  font-weight: 600;
+  letter-spacing: -0.3px;
 }
 .mishra__body-wrap {
   display: grid;
