@@ -195,6 +195,7 @@ a { color: inherit; text-decoration: none; }
 }
 .hero__bg {
   position: absolute; inset: 0;
+  background-image: url('assets/01-hero-gully-dawn.png?v=14');
   background-size: cover;
   background-position: center center;
   transform: scale(1.03);
@@ -325,9 +326,11 @@ a { color: inherit; text-decoration: none; }
     inset: 0;
     width: 100%;
     height: 100%;
-    background-position: 68% center; /* focus on Papa + kadai side of the illustration */
+    /* Portrait-composed mobile hero (papa forward, gully + tree + temple in one tall frame) */
+    background-image: url('assets/01-hero-gully-mobile.png?v=1');
+    background-position: center center;
     background-size: cover;
-    transform: scale(1.03);
+    transform: scale(1.02);
     animation: slowZoom 14s ease-in-out infinite alternate;
     /* Long smooth taper — image fades gently into the cream overlay */
     -webkit-mask-image: linear-gradient(
