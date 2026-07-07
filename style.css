@@ -376,16 +376,19 @@ a { color: inherit; text-decoration: none; }
     backdrop-filter: none;
     margin: 0;
   }
-  /* Title: BIG hero-scale font. 41 chars wraps naturally to 2 lines — read as one flowing sentence */
+  /* Title: forced 2 lines via <br/>. Font sized so both lines stay on one physical row each.
+     "North India wakes up to." (24 chars) is the longer of the two — it's the width limiter. */
   .hero__title {
     margin: 0;
-    font-size: clamp(1.5rem, 6.4vw, 2.1rem);
-    line-height: 1.15;
+    font-size: clamp(1.15rem, 4.6vw, 1.5rem);
+    line-height: 1.18;
     letter-spacing: -0.015em;
     color: var(--brown-dark) !important;
     text-shadow: none !important;
     opacity: 1 !important;
     animation: none !important;
+    white-space: normal;
+    overflow: visible;
   }
   /* Sub + Hindi tagline on one row (nowrap so they don't stack) */
   .hero__meta {
