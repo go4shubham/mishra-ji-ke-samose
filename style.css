@@ -331,8 +331,9 @@ a { color: inherit; text-decoration: none; }
     background-image: url('assets/01-hero-gully-mobile.png?v=4');
     background-position: center center;
     background-size: cover;
-    transform: scale(1.02);
-    animation: slowZoom 14s ease-in-out infinite alternate;
+    /* No scale/zoom on mobile — preserve the full illustration edge to edge */
+    transform: none;
+    animation: none;
     /* No bottom fade on mobile — the illustration ends cleanly at its edge */
     -webkit-mask-image: none !important;
     mask-image: none !important;
@@ -375,22 +376,41 @@ a { color: inherit; text-decoration: none; }
     backdrop-filter: none;
     margin: 0;
   }
-  /* Title shrunk so each br line stays on ONE physical line (no messy wrap) */
-  .hero__title { margin: 0; font-size: clamp(1.4rem, 5.6vw, 1.9rem); line-height: 1.14; }
-  /* Sub + Hindi tagline share one row */
+  /* Title: 3 clean lines, no wrapping */
+  .hero__title {
+    margin: 0;
+    font-size: clamp(1.2rem, 5.2vw, 1.7rem);
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+  }
+  /* Sub + Hindi tagline on one row (nowrap so they don't stack) */
   .hero__meta {
     display: flex;
-    gap: 0.65rem;
+    gap: 0.55rem;
     align-items: center;
-    flex-wrap: wrap;
-    margin-top: 0.7rem;
+    flex-wrap: nowrap;
+    margin-top: 0.6rem;
   }
-  .hero__sub { margin: 0; font-size: 0.95rem; }
-  .hero__tagline { margin: 0; padding: 0.35rem 0.75rem; }
+  .hero__sub {
+    margin: 0;
+    font-size: 0.85rem;
+    line-height: 1.2;
+    flex-shrink: 0;
+  }
+  .hero__tagline {
+    margin: 0;
+    padding: 0.3rem 0.6rem;
+    flex-shrink: 1;
+    min-width: 0;
+  }
+  .hero__hindi {
+    font-size: 0.85rem !important;
+    white-space: nowrap;
+  }
   /* Button on its own row below, on ONE physical line */
   .hero__cta {
     display: inline-flex;
-    margin-top: 1rem;
+    margin-top: 0.9rem;
     padding: 0.8rem 1.4rem;
     font-size: 0.92rem;
     min-height: 46px;
