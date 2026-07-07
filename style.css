@@ -313,9 +313,11 @@ a { color: inherit; text-decoration: none; }
 @media (min-width: 821px) {
   .hero__title { display: none; }
   .hero__sub { display: none; }
-  /* Push content down so pills sit near the illustration's FAMOUS CHOLE SAMOSE board line */
-  .hero { align-items: flex-end; }
-  .hero__content { padding-top: 2rem; padding-bottom: 2rem; }
+  /* Cap hero to viewport + anchor illustration to its bottom so the FAMOUS CHOLE SAMOSE board
+     always stays in frame. Top of the sky/tree crops off first, board stays visible. */
+  .hero { align-items: flex-end; max-height: 88vh; }
+  .hero__bg { background-position: center bottom !important; }
+  .hero__content { padding-top: 2rem; padding-bottom: 3rem; }
   .hero__meta {
     display: flex;
     flex-direction: column;
