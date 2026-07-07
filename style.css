@@ -309,29 +309,27 @@ a { color: inherit; text-decoration: none; }
 .hero__cta span { transition: transform 0.3s; }
 .hero__cta:hover span { transform: translateX(4px); }
 
-/* ========== Desktop hero experiment: no headline, tagline on top (matches board vibe), sub below ========== */
+/* ========== Desktop hero: no headline. Two Hindi tagline pills stacked (board-scale). Sub hidden. ========== */
 @media (min-width: 821px) {
   .hero__title { display: none; }
+  .hero__sub { display: none; }
   .hero__meta {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 1rem;
+    gap: 0.75rem;
     margin-top: 0.75rem;
   }
   .hero__tagline {
-    order: 1;
-    padding: 1rem 1.55rem 1rem 1.65rem;
+    padding: 0.85rem 1.4rem 0.85rem 1.5rem;
     margin: 0;
+    order: 1;
   }
+  .hero__tagline--mumbai { order: 2; }
+  /* Font sized to sit in the same weight range as the FAMOUS CHOLE SAMOSE board */
   .hero__hindi {
-    font-size: clamp(1.7rem, 3.2vw, 2.4rem);
+    font-size: clamp(1.35rem, 2.4vw, 1.95rem);
     font-weight: 700;
-  }
-  .hero__sub {
-    order: 2;
-    font-size: clamp(1.4rem, 2.3vw, 1.9rem);
-    margin-top: 0;
   }
   .hero__cta { margin-top: 0.5rem; }
 }
