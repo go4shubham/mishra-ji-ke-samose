@@ -309,29 +309,49 @@ a { color: inherit; text-decoration: none; }
 .hero__cta span { transition: transform 0.3s; }
 .hero__cta:hover span { transform: translateX(4px); }
 
-/* ========== Desktop hero: no headline. Two Hindi tagline pills stacked (board-scale). Sub hidden. ========== */
+/* ========== Desktop hero: no headline. Two Hindi tagline pills stacked (board-scale). Content pushed lower. ========== */
 @media (min-width: 821px) {
   .hero__title { display: none; }
   .hero__sub { display: none; }
+  /* Push content down so pills sit near the illustration's FAMOUS CHOLE SAMOSE board line */
+  .hero { align-items: flex-end; }
+  .hero__content { padding-top: 3rem; padding-bottom: 4.5rem; }
   .hero__meta {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 0.75rem;
-    margin-top: 0.75rem;
+    gap: 0.7rem;
+    margin-top: 0.5rem;
   }
   .hero__tagline {
-    padding: 0.85rem 1.4rem 0.85rem 1.5rem;
+    padding: 0.75rem 1.3rem 0.75rem 1.4rem;
     margin: 0;
     order: 1;
   }
-  .hero__tagline--mumbai { order: 2; }
-  /* Font sized to sit in the same weight range as the FAMOUS CHOLE SAMOSE board */
+  /* Second pill: offset forward (indented right) so the two feel like a stepped pair */
+  .hero__tagline--mumbai {
+    order: 2;
+    margin-left: 2.5rem;
+  }
+  /* Font sized to sit in the same visual weight as the FAMOUS CHOLE SAMOSE board painted below */
   .hero__hindi {
-    font-size: clamp(1.35rem, 2.4vw, 1.95rem);
+    font-size: clamp(1.15rem, 2vw, 1.7rem);
     font-weight: 700;
   }
-  .hero__cta { margin-top: 0.5rem; }
+  .hero__cta { margin-top: 0.75rem; }
+  /* Hindi CTA gets more visual weight; English is the quiet subtitle */
+  .hero__cta-hi {
+    font-family: var(--f-hindi);
+    font-size: 1.15em;
+    font-weight: 700;
+  }
+  .hero__cta-en {
+    font-size: 0.75em;
+    opacity: 0.75;
+    font-weight: 500;
+    letter-spacing: 0.03em;
+    margin-left: 0.5rem;
+  }
 }
 
 /* ========== Mobile hero: image on TOP (natural 4:5) + text BELOW (not overlaid) ========== */
@@ -419,6 +439,9 @@ a { color: inherit; text-decoration: none; }
   }
   /* Hide the extra Mumbai Hindi pill on mobile — mobile keeps the English sub + single tagline */
   .hero__tagline--mumbai { display: none; }
+  /* Mobile keeps the plain English CTA text; hide the Hindi-first CTA rendering */
+  .hero__cta-hi { display: none; }
+  .hero__cta-en { font-size: inherit; opacity: 1; font-weight: inherit; letter-spacing: normal; margin-left: 0; }
   /* Sub + Hindi tagline on one row (nowrap so they don't stack) */
   .hero__meta {
     display: flex;
