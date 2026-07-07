@@ -168,8 +168,26 @@ a { color: inherit; text-decoration: none; }
   transform: scale(1.03);
   animation: slowZoom 14s ease-in-out infinite alternate;
   will-change: transform;
-  -webkit-mask-image: linear-gradient(to bottom, black 0%, black 72%, transparent 100%);
-  mask-image: linear-gradient(to bottom, black 0%, black 72%, transparent 100%);
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    black 0%,
+    black 48%,
+    rgba(0, 0, 0, 0.92) 62%,
+    rgba(0, 0, 0, 0.72) 74%,
+    rgba(0, 0, 0, 0.45) 84%,
+    rgba(0, 0, 0, 0.18) 93%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to bottom,
+    black 0%,
+    black 48%,
+    rgba(0, 0, 0, 0.92) 62%,
+    rgba(0, 0, 0, 0.72) 74%,
+    rgba(0, 0, 0, 0.45) 84%,
+    rgba(0, 0, 0, 0.18) 93%,
+    transparent 100%
+  );
 }
 @keyframes slowZoom {
   from { transform: scale(1.03); }
@@ -287,10 +305,8 @@ a { color: inherit; text-decoration: none; }
     aspect-ratio: 1376 / 768;
     background: linear-gradient(
       to bottom,
-      rgba(61, 28, 0, 0.05) 0%,
-      rgba(61, 28, 0, 0.02) 60%,
-      rgba(245, 229, 200, 0.35) 92%,
-      var(--cream) 100%
+      rgba(61, 28, 0, 0.04) 0%,
+      transparent 40%
     );
     pointer-events: none;
   }
@@ -740,8 +756,26 @@ a { color: inherit; text-decoration: none; }
   border-radius: 6px;
   box-shadow: 0 20px 60px rgba(61, 28, 0, 0.25);
   transform: rotate(-1deg);
-  -webkit-mask-image: linear-gradient(to bottom, black 0%, black 82%, transparent 100%);
-  mask-image: linear-gradient(to bottom, black 0%, black 82%, transparent 100%);
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    black 0%,
+    black 58%,
+    rgba(0, 0, 0, 0.9) 72%,
+    rgba(0, 0, 0, 0.65) 82%,
+    rgba(0, 0, 0, 0.35) 91%,
+    rgba(0, 0, 0, 0.12) 97%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to bottom,
+    black 0%,
+    black 58%,
+    rgba(0, 0, 0, 0.9) 72%,
+    rgba(0, 0, 0, 0.65) 82%,
+    rgba(0, 0, 0, 0.35) 91%,
+    rgba(0, 0, 0, 0.12) 97%,
+    transparent 100%
+  );
 }
 .mishra__portrait::before {
   content: 'मिश्रा जी';
