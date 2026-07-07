@@ -361,14 +361,16 @@ a { color: inherit; text-decoration: none; }
   }
   /* No overlay veil — image stands alone, text is a separate block below */
   .hero__overlay { display: none; }
-  /* Text sits BELOW the illustration in natural flow — no overlap, kadai fully visible */
+  /* Text sits BELOW the illustration in natural flow — reduced side padding to give title more room */
   .hero__content {
     position: relative;
     left: auto; right: auto; bottom: auto;
     z-index: 1;
     max-width: 100%;
+    width: 100%;
+    box-sizing: border-box;
     text-align: left;
-    padding: 1.5rem var(--gutter) 2rem;
+    padding: 1.25rem 1rem 1.75rem;
     color: var(--brown-dark);
     background: var(--cream);
     border-radius: 0;
@@ -376,19 +378,20 @@ a { color: inherit; text-decoration: none; }
     backdrop-filter: none;
     margin: 0;
   }
-  /* Title: ONE physical line — the whole 41-char sentence must show fully.
-     Small font is the price of fitting the whole sentence on one line on mobile. */
+  /* Title: ONE physical line at max font that fits 343px content width (375px - 32px padding) */
   .hero__title {
     margin: 0;
-    font-size: clamp(0.68rem, 3.15vw, 0.95rem);
-    line-height: 1.25;
-    letter-spacing: -0.02em;
+    font-size: clamp(0.85rem, 3.75vw, 1.15rem);
+    line-height: 1.2;
+    letter-spacing: -0.028em;
     color: var(--brown-dark) !important;
     text-shadow: none !important;
     opacity: 1 !important;
     animation: none !important;
     white-space: nowrap;
-    overflow: visible;
+    overflow: hidden;
+    text-overflow: clip;
+    width: 100%;
   }
   /* Sub + Hindi tagline on one row (nowrap so they don't stack) */
   .hero__meta {
@@ -400,21 +403,23 @@ a { color: inherit; text-decoration: none; }
   }
   .hero__sub {
     margin: 0;
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     line-height: 1.2;
     flex-shrink: 0;
-    color: var(--orange-light) !important;
+    /* Darker orange reads on cream (--orange-light was too pale on cream bg) */
+    color: var(--orange) !important;
+    font-weight: 600;
   }
-  /* Hindi tagline pill: highlighted — dark bg + orange border + orange text, matches desktop */
+  /* Hindi tagline pill: dark bg + orange border + orange text, matches desktop treatment */
   .hero__tagline {
     margin: 0;
     padding: 0.4rem 0.85rem;
     flex-shrink: 1;
     min-width: 0;
-    background: rgba(61, 28, 0, 0.85) !important;
+    background: rgba(61, 28, 0, 0.90) !important;
     border-left: 3px solid var(--orange-light) !important;
     border-radius: 0 4px 4px 0 !important;
-    box-shadow: 0 2px 10px rgba(93, 42, 0, 0.18);
+    box-shadow: 0 2px 10px rgba(93, 42, 0, 0.2);
   }
   .hero__hindi {
     font-size: 0.9rem !important;
@@ -422,12 +427,12 @@ a { color: inherit; text-decoration: none; }
     color: var(--orange-light) !important;
     font-weight: 700 !important;
   }
-  /* CTA: full-width bar so we USE the horizontal space on mobile */
+  /* CTA: TRULY full-width bar — spans same width as title + tagline row */
   .hero__cta {
-    display: flex;
+    display: flex !important;
     justify-content: center;
     align-items: center;
-    margin-top: 1rem;
+    margin: 1rem 0 0 0;
     padding: 0.85rem 1.15rem;
     font-size: 0.95rem;
     min-height: 48px;
