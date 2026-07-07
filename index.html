@@ -60,47 +60,66 @@
 
     <div class="timeline">
       <svg class="timeline__path" viewBox="0 0 1000 200" preserveAspectRatio="none" aria-hidden="true">
+        <defs>
+          <!-- Reusable logo-style walking samosa (mustachioed, chutney drip, tiny legs) -->
+          <symbol id="samosa-walker" viewBox="-24 -34 48 44">
+            <!-- Body -->
+            <path d="M -20 6 L 0 -28 L 20 6 Z"
+                  fill="#E8933C" stroke="#8B3A1E" stroke-width="2" stroke-linejoin="round" />
+            <!-- Green chutney drip across the top -->
+            <path d="M -14 -8 Q -8 -16 -2 -12 Q 4 -20 10 -12 Q 14 -8 16 -4"
+                  fill="none" stroke="#4A7C10" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M -6 -6 L -6 0" stroke="#4A7C10" stroke-width="2" stroke-linecap="round" />
+            <path d="M 8 -8 L 8 -2" stroke="#4A7C10" stroke-width="2" stroke-linecap="round" />
+            <!-- Eyes with highlights -->
+            <circle cx="-6" cy="-4" r="2.1" fill="#2b1500" />
+            <circle cx="6"  cy="-4" r="2.1" fill="#2b1500" />
+            <circle cx="-5.4" cy="-4.6" r="0.7" fill="#fff" />
+            <circle cx="6.6"  cy="-4.6" r="0.7" fill="#fff" />
+            <!-- Mustache -->
+            <path d="M -8 2 Q -4 -1 0 1 Q 4 -1 8 2"
+                  fill="#2b1500" stroke="#2b1500" stroke-width="1.6"
+                  stroke-linecap="round" stroke-linejoin="round" />
+            <!-- Little smile below mustache -->
+            <path d="M -2 4 Q 0 5.5 2 4" fill="none" stroke="#2b1500" stroke-width="1.2" stroke-linecap="round" />
+          </symbol>
+        </defs>
+
+        <!-- Dotted walking path -->
         <path d="M 60 100 Q 170 30, 290 100 T 520 100 T 750 100 T 960 100"
               fill="none" stroke="currentColor" stroke-width="3"
               stroke-dasharray="3 14" stroke-linecap="round" />
-        <!-- Walking samosa footprints between each image (larger, clearer) -->
+
+        <!-- Four walking samosas between the timeline stops (alternating leg pose) -->
         <g class="timeline__footprint" transform="translate(200, 42)">
-          <path d="M 0 0 L 16 -22 L 32 0 Z" fill="#E8933C" stroke="#8B3A1E" stroke-width="1.5" stroke-linejoin="round" />
-          <path d="M 3 -3 Q 16 -9 29 -3" fill="none" stroke="#4A7C10" stroke-width="2.2" stroke-linecap="round" />
-          <path d="M 8 -6 Q 16 -3 24 -6" fill="none" stroke="#2b1500" stroke-width="1.2" stroke-linecap="round" />
+          <use href="#samosa-walker" x="-16" y="-22" width="32" height="32" />
+          <!-- Walking legs — right leg forward -->
+          <path d="M -4 8 L -6 13" stroke="#8B3A1E" stroke-width="2.2" stroke-linecap="round" />
+          <path d="M 4 8 L 7 12"    stroke="#8B3A1E" stroke-width="2.2" stroke-linecap="round" />
         </g>
         <g class="timeline__footprint" transform="translate(410, 130)">
-          <path d="M 0 0 L 16 -22 L 32 0 Z" fill="#E8933C" stroke="#8B3A1E" stroke-width="1.5" stroke-linejoin="round" />
-          <path d="M 3 -3 Q 16 -9 29 -3" fill="none" stroke="#4A7C10" stroke-width="2.2" stroke-linecap="round" />
-          <path d="M 8 -6 Q 16 -3 24 -6" fill="none" stroke="#2b1500" stroke-width="1.2" stroke-linecap="round" />
+          <use href="#samosa-walker" x="-16" y="-22" width="32" height="32" />
+          <!-- Walking legs — left leg forward -->
+          <path d="M -4 8 L -7 12" stroke="#8B3A1E" stroke-width="2.2" stroke-linecap="round" />
+          <path d="M 4 8 L 6 13"    stroke="#8B3A1E" stroke-width="2.2" stroke-linecap="round" />
         </g>
         <g class="timeline__footprint" transform="translate(630, 42)">
-          <path d="M 0 0 L 16 -22 L 32 0 Z" fill="#E8933C" stroke="#8B3A1E" stroke-width="1.5" stroke-linejoin="round" />
-          <path d="M 3 -3 Q 16 -9 29 -3" fill="none" stroke="#4A7C10" stroke-width="2.2" stroke-linecap="round" />
-          <path d="M 8 -6 Q 16 -3 24 -6" fill="none" stroke="#2b1500" stroke-width="1.2" stroke-linecap="round" />
+          <use href="#samosa-walker" x="-16" y="-22" width="32" height="32" />
+          <path d="M -4 8 L -6 13" stroke="#8B3A1E" stroke-width="2.2" stroke-linecap="round" />
+          <path d="M 4 8 L 7 12"    stroke="#8B3A1E" stroke-width="2.2" stroke-linecap="round" />
         </g>
         <g class="timeline__footprint" transform="translate(850, 130)">
-          <path d="M 0 0 L 16 -22 L 32 0 Z" fill="#E8933C" stroke="#8B3A1E" stroke-width="1.5" stroke-linejoin="round" />
-          <path d="M 3 -3 Q 16 -9 29 -3" fill="none" stroke="#4A7C10" stroke-width="2.2" stroke-linecap="round" />
-          <path d="M 8 -6 Q 16 -3 24 -6" fill="none" stroke="#2b1500" stroke-width="1.2" stroke-linecap="round" />
+          <use href="#samosa-walker" x="-16" y="-22" width="32" height="32" />
+          <path d="M -4 8 L -7 12" stroke="#8B3A1E" stroke-width="2.2" stroke-linecap="round" />
+          <path d="M 4 8 L 6 13"    stroke="#8B3A1E" stroke-width="2.2" stroke-linecap="round" />
         </g>
-        <!-- The lead walker samosa mascot at the start of the journey (bigger, mustachioed) -->
-        <g class="timeline__walker" transform="translate(10, 100)">
-          <!-- Body -->
-          <path d="M 0 0 L 30 -44 L 60 0 Z" fill="#E8933C" stroke="#8B3A1E" stroke-width="2.5" stroke-linejoin="round" />
-          <!-- Chutney drizzle -->
-          <path d="M 8 -8 Q 30 -16 52 -8" fill="none" stroke="#4A7C10" stroke-width="4.5" stroke-linecap="round" />
-          <!-- Mustache -->
-          <path d="M 16 -14 Q 22 -18 30 -15 Q 38 -18 44 -14" fill="#2b1500" stroke="#2b1500" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-          <!-- Eyes -->
-          <circle cx="21" cy="-22" r="2.5" fill="#2b1500" />
-          <circle cx="39" cy="-22" r="2.5" fill="#2b1500" />
-          <!-- Eye highlights -->
-          <circle cx="22" cy="-23" r="0.8" fill="#fff" />
-          <circle cx="40" cy="-23" r="0.8" fill="#fff" />
-          <!-- Little walking legs -->
-          <path d="M 18 0 L 15 6" stroke="#8B3A1E" stroke-width="2.5" stroke-linecap="round" />
-          <path d="M 42 0 L 45 6" stroke="#8B3A1E" stroke-width="2.5" stroke-linecap="round" />
+
+        <!-- The lead walker samosa at the start of the journey (bigger) -->
+        <g class="timeline__walker" transform="translate(40, 100)">
+          <use href="#samosa-walker" x="-30" y="-42" width="60" height="60" />
+          <!-- Bigger walking legs -->
+          <path d="M -8 16 L -12 24" stroke="#8B3A1E" stroke-width="3" stroke-linecap="round" />
+          <path d="M 8 16 L 12 24"    stroke="#8B3A1E" stroke-width="3" stroke-linecap="round" />
         </g>
       </svg>
       <div class="timeline__step timeline__step--up reveal">
@@ -176,12 +195,17 @@
   </section>
 
   <section id="mishra" class="mishra">
-    <div class="mishra__portrait">
-      <img src="assets/07-mishra-ji-portrait.png?v=5" alt="Mishra Ji" loading="lazy" />
-    </div>
-    <div class="mishra__text">
-      <p class="section__kicker">Meet Mishraji</p>
-      <h2 class="section__title">The man behind<br/><span class="italic">the kadhai.</span></h2>
+    <header class="mishra__header reveal">
+      <p class="section__kicker">Meet</p>
+      <h2 class="mishra__name">Mishraji</h2>
+      <p class="mishra__name-hindi">मिश्रा जी</p>
+    </header>
+    <div class="mishra__body-wrap">
+      <div class="mishra__portrait">
+        <img src="assets/07-mishra-ji-portrait.png?v=6" alt="Mishra Ji" loading="lazy" />
+      </div>
+      <div class="mishra__text">
+        <h3 class="mishra__subtitle">The man behind<br/><span class="italic">the kadhai.</span></h3>
 
       <p class="mishra__body">Every UP city has a Mishraji. Ours has been frying samosas in a Prayagraj gully since before most of us were born. Same brass <em>kadhai.</em> Same faded kurta. Same tilak on the forehead. His chole simmers slow from 5 AM.</p>
 
@@ -191,7 +215,8 @@
         <p class="mishra__quote">"I looked for his chole samosa when I moved to Mumbai. Never found it. So we're bringing his kitchen here."</p>
         <p class="mishra__sig">Shubham Mishra, Founder<br/><span class="mishra__origin">Prayagraj to Mumbai</span></p>
       </div>
-    </div>
+      </div><!-- /.mishra__text -->
+    </div><!-- /.mishra__body-wrap -->
   </section>
 
   <section class="ritual-callout">
