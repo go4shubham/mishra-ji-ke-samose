@@ -376,19 +376,19 @@ a { color: inherit; text-decoration: none; }
     backdrop-filter: none;
     margin: 0;
   }
-  /* Title: ONE physical line on mobile, sized bigger than the sub text.
-     41 chars must fit in ~335px content width — 4.5vw = ~17px @ 375px, ~19px @ 428px */
+  /* Title: ONE physical line — 41 chars must physically fit in ~335px content width on iPhone.
+     Font tuned so it actually fits (with tight letter-spacing help). */
   .hero__title {
     margin: 0;
-    font-size: clamp(1rem, 4.5vw, 1.35rem);
-    line-height: 1.15;
-    letter-spacing: -0.02em;
+    font-size: clamp(0.82rem, 3.75vw, 1.2rem);
+    line-height: 1.2;
+    letter-spacing: -0.025em;
     color: var(--brown-dark) !important;
     text-shadow: none !important;
     opacity: 1 !important;
     animation: none !important;
     white-space: nowrap;
-    overflow: visible;
+    overflow: hidden;
   }
   /* Sub + Hindi tagline on one row (nowrap so they don't stack) */
   .hero__meta {
@@ -400,14 +400,14 @@ a { color: inherit; text-decoration: none; }
   }
   .hero__sub {
     margin: 0;
-    font-size: 0.85rem;
+    font-size: 0.75rem;
     line-height: 1.2;
     flex-shrink: 0;
   }
-  /* Hindi tagline pill: highlighted — solid warm bg + strong border, catches the eye */
+  /* Hindi tagline pill: highlighted — warm bg, red border bar, bold Devanagari — pops next to sub */
   .hero__tagline {
     margin: 0;
-    padding: 0.4rem 0.8rem;
+    padding: 0.35rem 0.7rem;
     flex-shrink: 1;
     min-width: 0;
     background: rgba(163, 32, 32, 0.14) !important;
@@ -416,7 +416,7 @@ a { color: inherit; text-decoration: none; }
     box-shadow: 0 2px 8px rgba(93, 42, 0, 0.08);
   }
   .hero__hindi {
-    font-size: 0.9rem !important;
+    font-size: 0.8rem !important;
     white-space: nowrap;
     color: var(--brown-dark) !important;
     font-weight: 700 !important;
