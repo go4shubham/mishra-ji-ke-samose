@@ -329,21 +329,18 @@ a { color: inherit; text-decoration: none; }
     margin: 0;
     order: 1;
   }
-  /* Second pill: offset forward (indented right) so the two feel like a stepped pair */
-  .hero__tagline--mumbai {
-    order: 2;
-    margin-left: 2.5rem;
-  }
+  /* Desktop shows the combined pill copy, mobile shows the short one */
+  .hero__hindi--mobile { display: none; }
   /* Font sized to sit in the same visual weight as the FAMOUS CHOLE SAMOSE board painted below */
   .hero__hindi {
     font-size: clamp(1.15rem, 2vw, 1.7rem);
     font-weight: 700;
   }
-  /* CTA becomes the 3rd stair step — offset further right than pill 2, smaller than the pills */
+  /* CTA is 2nd stair step now — offset right of the single pill above */
   .hero__cta {
-    margin: 0.75rem 0 0 5.5rem;
+    margin: 0.85rem 0 0 3rem;
     padding: 0.6rem 1.3rem;
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     min-height: 40px;
   }
   .hero__cta-hi {
@@ -442,8 +439,9 @@ a { color: inherit; text-decoration: none; }
     overflow: visible;
     width: 100%;
   }
-  /* Hide the extra Mumbai Hindi pill on mobile — mobile keeps the English sub + single tagline */
-  .hero__tagline--mumbai { display: none; }
+  /* Mobile shows the short desktop-first-line only */
+  .hero__hindi--desktop { display: none; }
+  .hero__hindi--mobile { display: inline; }
   /* Mobile keeps the plain English CTA text; hide the Hindi label, un-hide the English label */
   .hero__cta-hi { display: none; }
   .hero__cta-en {
