@@ -376,19 +376,19 @@ a { color: inherit; text-decoration: none; }
     backdrop-filter: none;
     margin: 0;
   }
-  /* Title: ONE physical line — 41 chars must physically fit in ~335px content width on iPhone.
-     Font tuned so it actually fits (with tight letter-spacing help). */
+  /* Title: ONE physical line — the whole 41-char sentence must show fully.
+     Small font is the price of fitting the whole sentence on one line on mobile. */
   .hero__title {
     margin: 0;
-    font-size: clamp(0.82rem, 3.75vw, 1.2rem);
-    line-height: 1.2;
-    letter-spacing: -0.025em;
+    font-size: clamp(0.68rem, 3.15vw, 0.95rem);
+    line-height: 1.25;
+    letter-spacing: -0.02em;
     color: var(--brown-dark) !important;
     text-shadow: none !important;
     opacity: 1 !important;
     animation: none !important;
     white-space: nowrap;
-    overflow: hidden;
+    overflow: visible;
   }
   /* Sub + Hindi tagline on one row (nowrap so they don't stack) */
   .hero__meta {
