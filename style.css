@@ -338,19 +338,23 @@ a { color: inherit; text-decoration: none; }
     font-size: clamp(1.15rem, 2vw, 1.7rem);
     font-weight: 700;
   }
-  .hero__cta { margin-top: 0.75rem; }
-  /* Hindi CTA gets more visual weight; English is the quiet subtitle */
+  /* CTA becomes the 3rd stair step — offset further right than pill 2, smaller than the pills */
+  .hero__cta {
+    margin: 1rem 0 0 5.5rem;
+    padding: 0.7rem 1.4rem;
+    font-size: 0.95rem;
+    min-height: 44px;
+  }
   .hero__cta-hi {
     font-family: var(--f-hindi);
-    font-size: 1.15em;
     font-weight: 700;
   }
+  /* English label is present in DOM for accessibility, hidden visually */
   .hero__cta-en {
-    font-size: 0.75em;
-    opacity: 0.75;
-    font-weight: 500;
-    letter-spacing: 0.03em;
-    margin-left: 0.5rem;
+    position: absolute;
+    width: 1px; height: 1px;
+    padding: 0; margin: -1px; overflow: hidden;
+    clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;
   }
 }
 
@@ -439,9 +443,14 @@ a { color: inherit; text-decoration: none; }
   }
   /* Hide the extra Mumbai Hindi pill on mobile — mobile keeps the English sub + single tagline */
   .hero__tagline--mumbai { display: none; }
-  /* Mobile keeps the plain English CTA text; hide the Hindi-first CTA rendering */
+  /* Mobile keeps the plain English CTA text; hide the Hindi label, un-hide the English label */
   .hero__cta-hi { display: none; }
-  .hero__cta-en { font-size: inherit; opacity: 1; font-weight: inherit; letter-spacing: normal; margin-left: 0; }
+  .hero__cta-en {
+    position: static !important;
+    width: auto !important; height: auto !important;
+    padding: 0 !important; margin: 0 !important; overflow: visible !important;
+    clip: auto !important; white-space: normal !important; border: 0;
+  }
   /* Sub + Hindi tagline on one row (nowrap so they don't stack) */
   .hero__meta {
     display: flex;
