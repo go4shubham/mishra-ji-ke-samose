@@ -53,11 +53,27 @@ a { color: inherit; text-decoration: none; }
   z-index: 100;
   display: flex; justify-content: space-between; align-items: center;
   padding: 0.6rem var(--gutter);
+  /* Default over the hero: transparent so the full illustration + rooftop monkey show through */
+  background: transparent;
+  backdrop-filter: none;
+  border-bottom: 1px solid transparent;
+  transition: background 0.35s ease, backdrop-filter 0.35s ease, border-color 0.35s ease, box-shadow 0.3s;
+}
+/* Once scrolled past the hero (or when mobile menu is open), bring back the solid cream bar */
+.nav.nav--scrolled,
+.nav:has(.nav__burger.active) {
   background: rgba(245, 229, 200, 0.94);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid rgba(93, 42, 0, 0.08);
-  transition: box-shadow 0.3s;
 }
+.nav:has(.nav__burger.active) .nav__logo { filter: none; }
+.nav:has(.nav__burger.active) .nav__burger span { background: var(--brown-dark); box-shadow: none; }
+/* Subtle text shadow while transparent so links read against the warm illustration */
+.nav:not(.nav--scrolled) .nav__links a { text-shadow: 0 1px 8px rgba(93, 42, 0, 0.35); }
+.nav:not(.nav--scrolled) .nav__logo {
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.25));
+}
+.nav:not(.nav--scrolled) .nav__burger span { background: var(--cream); box-shadow: 0 1px 6px rgba(0, 0, 0, 0.35); }
 .nav__logo { height: 44px; width: auto; }
 .nav__links { list-style: none; display: flex; gap: 1.5rem; align-items: center; }
 .nav__links a {

@@ -20,16 +20,21 @@ document.querySelectorAll('.promise__item').forEach((item, i) => {
   item.style.transitionDelay = `${i * 0.08}s`;
 });
 
-// Nav shadow + scroll-to-top button visibility
+// Nav: transparent over hero, solid + shadow once scrolled past it
 const nav = document.querySelector('.nav');
 const toTopBtn = document.querySelector('.to-top');
-window.addEventListener('scroll', () => {
+const hero = document.querySelector('.hero');
+function updateNav() {
   const y = window.scrollY;
-  nav.style.boxShadow = y > 40 ? '0 4px 20px rgba(61, 28, 0, 0.08)' : 'none';
-  if (toTopBtn) {
-    toTopBtn.classList.toggle('visible', y > 400);
-  }
-});
+  const heroBottom = hero ? hero.offsetHeight - 80 : window.innerHeight * 0.7;
+  const scrolled = y > heroBottom;
+  nav.classList.toggle('nav--scrolled', scrolled);
+  nav.style.boxShadow = scrolled ? '0 4px 20px rgba(61, 28, 0, 0.10)' : 'none';
+  if (toTopBtn) toTopBtn.classList.toggle('visible', y > 400);
+}
+window.addEventListener('scroll', updateNav, { passive: true });
+window.addEventListener('resize', updateNav);
+updateNav();
 
 function scrollToTop() {
   window.scrollTo({ top: 0, behavior: 'smooth' });
