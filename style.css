@@ -168,6 +168,8 @@ a { color: inherit; text-decoration: none; }
   transform: scale(1.03);
   animation: slowZoom 14s ease-in-out infinite alternate;
   will-change: transform;
+  -webkit-mask-image: linear-gradient(to bottom, black 0%, black 72%, transparent 100%);
+  mask-image: linear-gradient(to bottom, black 0%, black 72%, transparent 100%);
 }
 @keyframes slowZoom {
   from { transform: scale(1.03); }
@@ -738,6 +740,8 @@ a { color: inherit; text-decoration: none; }
   border-radius: 6px;
   box-shadow: 0 20px 60px rgba(61, 28, 0, 0.25);
   transform: rotate(-1deg);
+  -webkit-mask-image: linear-gradient(to bottom, black 0%, black 82%, transparent 100%);
+  mask-image: linear-gradient(to bottom, black 0%, black 82%, transparent 100%);
 }
 .mishra__portrait::before {
   content: 'मिश्रा जी';
