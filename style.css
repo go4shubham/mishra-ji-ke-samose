@@ -328,7 +328,8 @@ a { color: inherit; text-decoration: none; }
     height: 100%;
     /* Portrait-composed mobile hero (papa forward, gully + tree + temple, monkey + cow) */
     background-image: url('assets/01-hero-gully-mobile.png?v=2');
-    background-position: center center;
+    /* Bias horizontal crop toward the right so the rooftop monkey + Papa stay in frame on tall phones */
+    background-position: 78% center;
     background-size: cover;
     transform: scale(1.02);
     animation: slowZoom 14s ease-in-out infinite alternate;
